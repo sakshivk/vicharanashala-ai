@@ -1,0 +1,10 @@
+title: Vicharanashala Website
+description: Website development for Vicharanashala.
+theme: minima
+
+# Replace this with the final custom domain when it is available.
+url: "https://your-custom-domain.example"
+baseurl: ""
+
+plugins:
+  - jekyll-feed
