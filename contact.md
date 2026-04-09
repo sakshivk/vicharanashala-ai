@@ -5,8 +5,6 @@ parent: Others
 permalink: /contact/
 ---
 
-## Contact
-
 ### Address
 VLED, Super Academic Block  
 Indian Institute of Technology, Ropar  

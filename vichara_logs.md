@@ -4,8 +4,6 @@ title: Vichara Logs
 permalink: /vichara_logs/
 ---
 
-# Vichara Logs
-
 **Vichara Logs** is a curated collection of thoughts, experiments, and documented practices centered around learning and inquiry. It moves from reflection (**Vi-Chintan**), to exploration (**Vi-Prayoga**), to structured documentation (**Vi-Reports**), capturing the full journey of thinking and doing.
 
 ---

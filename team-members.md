@@ -5,8 +5,6 @@ parent: Others
 permalink: /team-members/
 ---
 
-# Team Members
-
 - Dr. Sudarshan Iyengar
 - Meenakshi V
 - Prakash Hegade
