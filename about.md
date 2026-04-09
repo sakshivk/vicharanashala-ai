@@ -2,53 +2,6 @@
 layout: page
 title: About
 permalink: /about/
-header_brand_text: Vicharanashala
-header_brand_url: /
-header_links:
-	- label: Home
-		url: /
-	- label: Courses
-		url: /courses/
-	- label: Events
-		url: /events/
-	- label: Initiatives
-		url: /initiatives/
-	- label: Research
-		url: /research-blog/
-	- label: Contact
-		url: /contact/
-footer_brand_text: A platform for thoughtful learning, collaborative inquiry, and grounded social action.
-footer_columns:
-	- title: Explore
-		links:
-			- label: Home
-				url: /
-			- label: Courses
-				url: /courses/
-			- label: Events
-				url: /events/
-	- title: About
-		links:
-			- label: About
-				url: /about/
-			- label: Our Story
-				url: /ourstory/
-			- label: Contact
-				url: /contact/
-	- title: Research
-		links:
-			- label: Research Blog
-				url: /research-blog/
-			- label: Initiatives
-				url: /initiatives/
-footer_bottom_text: '&copy; 2026 Vicharanashala. All rights reserved.'
-footer_bottom_links:
-	- label: Home
-		url: /
-	- label: Contact
-		url: /contact/
-	- label: Research
-		url: /research-blog/
 ---
 
 Use this page to describe the project, the team, or the purpose of the website.
