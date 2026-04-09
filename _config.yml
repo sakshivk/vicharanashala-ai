@@ -6,7 +6,7 @@ url: "https://vicharanashala.github.io"
 baseurl: "/vicharanashala-ai"
 
 header_pages:
-  - home.md
+  - index.md
   - ourstory.md
   - vichara_log.md
   - research-blog.md
