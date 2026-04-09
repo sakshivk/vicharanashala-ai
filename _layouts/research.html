@@ -1,0 +1,220 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.summary %}<p class="post-description">{{ page.summary }}</p>{% endif %}
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>
+
+<style>
+  .post .project-card {
+    border: 1px solid #d8dee4;
+    border-radius: 14px;
+    margin: 0 0 1rem;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .post .project-card[open] {
+    border-color: #0f766e;
+    box-shadow: 0 8px 24px rgba(15, 118, 110, 0.12);
+  }
+
+  .post .project-card summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1rem 1.1rem;
+  }
+
+  .post .project-card summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .post .project-summary {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.7rem;
+  }
+
+  .post .project-title {
+    margin: 0;
+    font-size: 1.08rem;
+    color: #0f172a;
+  }
+
+  .post .project-meta {
+    margin: 0;
+    color: #334155;
+    font-size: 0.92rem;
+    font-weight: 600;
+    background: #e6fffb;
+    border-radius: 999px;
+    padding: 0.2rem 0.55rem;
+  }
+
+  .post .project-link {
+    font-weight: 700;
+    color: #0f766e;
+    text-decoration: none;
+    border: 1px solid rgba(15, 118, 110, 0.28);
+    border-radius: 999px;
+    background: #ffffff;
+    padding: 0.3rem 0.65rem;
+  }
+
+  .post .project-link:hover {
+    background: #e6fffb;
+    border-color: #0f766e;
+  }
+
+  .post .project-card-body {
+    border-top: 1px solid #e8edf2;
+    padding: 0.95rem 1.1rem 1.1rem;
+  }
+
+  .post .project-card-body p {
+    margin-top: 0;
+  }
+
+  @media (max-width: 640px) {
+    .post .project-summary {
+      align-items: flex-start;
+    }
+
+    .post .project-link {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var content = document.querySelector(".post .post-content");
+    if (!content) {
+      return;
+    }
+
+    var headings = Array.prototype.slice.call(content.querySelectorAll("h2"));
+    var projectsHeading = headings.find(function (h) {
+      return h.textContent.trim().toLowerCase() === "projects";
+    });
+
+    if (projectsHeading) {
+      var sections = [];
+      var node = projectsHeading.nextElementSibling;
+
+      while (node && node.tagName !== "H2") {
+        if (node.tagName === "H3") {
+          var titleNode = node;
+          var bodyNodes = [];
+          node = node.nextElementSibling;
+
+          while (node && node.tagName !== "H3" && node.tagName !== "H2") {
+            bodyNodes.push(node);
+            node = node.nextElementSibling;
+          }
+
+          sections.push({ titleNode: titleNode, bodyNodes: bodyNodes });
+          continue;
+        }
+
+        node = node.nextElementSibling;
+      }
+
+      if (sections.length > 0) {
+        var anchor = document.createComment("project-cards-anchor");
+        content.insertBefore(anchor, sections[0].titleNode);
+        var fragment = document.createDocumentFragment();
+
+        sections.forEach(function (section) {
+          var details = document.createElement("details");
+          details.className = "project-card";
+
+          var summary = document.createElement("summary");
+          var summaryWrap = document.createElement("div");
+          summaryWrap.className = "project-summary";
+
+          var title = document.createElement("h3");
+          title.className = "project-title";
+          title.textContent = section.titleNode.textContent.trim();
+          summaryWrap.appendChild(title);
+
+          var sectionText = section.bodyNodes
+            .map(function (el) { return el.textContent; })
+            .join(" ")
+            .replace(/\s+/g, " ");
+
+          var timelineMatch = sectionText.match(/Timeline:\s*([0-9]{4}\s*-\s*[0-9]{4})/i);
+          if (timelineMatch) {
+            var timeline = document.createElement("p");
+            timeline.className = "project-meta";
+            timeline.textContent = "Timeline: " + timelineMatch[1].replace(/\s+/g, "");
+            summaryWrap.appendChild(timeline);
+          }
+
+          var githubLink = section.bodyNodes
+            .map(function (el) { return el.querySelector('a[href*="github.com"]'); })
+            .find(function (a) { return !!a; });
+
+          if (githubLink) {
+            var link = document.createElement("a");
+            link.className = "project-link";
+            link.href = githubLink.href;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.textContent = "GitHub Repo";
+            link.addEventListener("click", function (event) {
+              event.stopPropagation();
+            });
+            summaryWrap.appendChild(link);
+          }
+
+          summary.appendChild(summaryWrap);
+          details.appendChild(summary);
+
+          var body = document.createElement("div");
+          body.className = "project-card-body";
+          section.bodyNodes.forEach(function (el) {
+            body.appendChild(el);
+          });
+          details.appendChild(body);
+
+          if (section.titleNode.parentNode) {
+            section.titleNode.parentNode.removeChild(section.titleNode);
+          }
+          fragment.appendChild(details);
+        });
+
+        content.insertBefore(fragment, anchor);
+        anchor.parentNode.removeChild(anchor);
+      }
+    }
+
+    // Keep one project card expanded at a time for cleaner reading.
+    var cards = document.querySelectorAll(".post .project-card");
+    cards.forEach(function (card) {
+      card.addEventListener("toggle", function () {
+        if (!card.open) {
+          return;
+        }
+        cards.forEach(function (other) {
+          if (other !== card) {
+            other.open = false;
+          }
+        });
+      });
+    });
+  });
+</script>
