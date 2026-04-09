@@ -16,21 +16,6 @@ Interdisciplinary projects at the intersection of education and cutting-edge tec
 
 ## Projects
 
-### Dopamine Driving through Dashboard (DDD)
-
-**Timeline:** 2023-2025  
-**Status:** In Progress  
-**GitHub:** [DDD Repository](https://github.com/vicharanashala/DDD)
-
-The DDD project develops centralized, interactive dashboards to drive motivation and engagement among stakeholders in educational research and development. Built with the MERN stack, DDD visualizes project progress, participation, and analytics across multiple initiatives at VLED Lab, enabling intuitive decision-making.
-
-**Focus Area:** Educational Technology
-
-**Key Outcomes**
-
-- Modular dashboard system for live tracking of research and product initiatives
-- Improved visibility into student/faculty engagement and contributions
-- Scalable design supporting multiple datasets and real-time visualization
 
 ### Peer Evaluation System (PES)
 
@@ -48,7 +33,7 @@ PES is a scalable web tool that streamlines peer assessment in education. Design
 - Analytics dashboard for instructors to identify patterns, biases, and anomalies
 - Integration-ready system for LMS platforms and classroom tools
 
-### Poll Automation
+### Spandan
 
 **Timeline:** 2025-2025  
 **Status:** In Progress  
@@ -80,3 +65,18 @@ ViBe is a comprehensive educational platform designed to enhance the learning ex
 - Personalized learning paths for students
 - Interactive content and community features for enhanced engagement
 
+### Dopamine Driving through Dashboard (DDD)
+
+**Timeline:** 2023-2025  
+**Status:** In Progress  
+**GitHub:** [DDD Repository](https://github.com/vicharanashala/DDD)
+
+The DDD project develops centralized, interactive dashboards to drive motivation and engagement among stakeholders in educational research and development. Built with the MERN stack, DDD visualizes project progress, participation, and analytics across multiple initiatives at VLED Lab, enabling intuitive decision-making.
+
+**Focus Area:** Educational Technology
+
+**Key Outcomes**
+
+- Modular dashboard system for live tracking of research and product initiatives
+- Improved visibility into student/faculty engagement and contributions
+- Scalable design supporting multiple datasets and real-time visualization

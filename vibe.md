@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ViBe - The Future of Learning
+title: ViBe
 permalink: /vibe/
 ---
 
