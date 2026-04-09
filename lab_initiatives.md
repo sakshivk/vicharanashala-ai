@@ -58,3 +58,15 @@ V-Talks bring together people from different walks of life. We invite profession
 **Dialogue in Motion:** These are not static presentations. True to the spirit of the lab, V-Talks are about interaction. It is about the spark that happens when a diverse audience questions, reflects, and interacts with a speaker's lived experience.
 
 **Vicharana in Action:** We pick general, yet profound, topics and explore them through the lens of active reflection.
+
+---
+
+#### Join the Conversation
+
+Vicharanashala is a community-driven space, and we want every V-Talk to reflect the interests of the people it serves.
+
+**Interested in Speaking?** If you are a professional with a unique perspective or a story that sparks reflection, we invite you to take the stage.
+
+**Nominate a Voice:** Is there someone whose ideas have made you pause and think? Nominate a speaker from any field to lead our next V-Talk.
+
+[Speak at or Nominate for a V-Talk](https://workdrive.zoho.in/folder/1etqy1d5e960a288a4271bdb93b833ad6a6c0)
