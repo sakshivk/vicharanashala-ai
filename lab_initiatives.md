@@ -9,6 +9,8 @@ card_mode: generic
 
 VicharanaShala works at the intersection of pedagogy, technology, and reflective practice. Our initiatives are designed to support educators, students, and institutions through meaningful learning innovation.
 
+---
+
 ## **Global Speaker Series: A Dialogue Across Borders**
 
 While the fundamental theories of education—from Bloom's Taxonomy to Project-Based Learning—remain universal, their application is deeply personal. At Vicharanashala, we recognize that every educator interprets these frameworks differently, allowing them to take a unique shape in every classroom.

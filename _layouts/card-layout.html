@@ -2,20 +2,13 @@
 layout: default
 ---
 
-<article class="content-template post">
-  <header class="content-header post-header">
-    <p class="content-meta">{{ page.section | default: page.parent | default: "Vicharanashala" }}{% if page.date %} - {{ page.date | date: "%B %Y" }}{% endif %}</p>
-    <h1 class="content-title post-title">{{ page.page_title | default: page.title | escape }}</h1>
-    {% if page.subtitle %}
-      <p class="content-subtitle">{{ page.subtitle }}</p>
-    {% endif %}
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.summary %}<p class="post-description">{{ page.summary }}</p>{% endif %}
   </header>
 
-  {% if page.hero_image %}
-    <img class="content-hero-image" src="{{ page.hero_image }}" alt="{{ page.page_title | default: page.title | escape }}" />
-  {% endif %}
-
-  <div class="post-content markdown-content">
+  <div class="post-content">
     {{ content }}
   </div>
 </article>
@@ -68,19 +61,19 @@ layout: default
     color: #475569;
   }
 
-  .post .content-card:nth-of-type(4n + 1) .card-title:not(.theme-vibe):not(.theme-pes):not(.theme-hp):not(.theme-spandan):not(.theme-vislides) {
+  .post .content-card:nth-of-type(4n + 1) .card-title:not(.theme-vibe):not(.theme-pes):not(.theme-hp):not(.theme-spandan) {
     color: #6f8ccf;
   }
 
-  .post .content-card:nth-of-type(4n + 2) .card-title:not(.theme-vibe):not(.theme-pes):not(.theme-hp):not(.theme-spandan):not(.theme-vislides) {
+  .post .content-card:nth-of-type(4n + 2) .card-title:not(.theme-vibe):not(.theme-pes):not(.theme-hp):not(.theme-spandan) {
     color: #c48fb7;
   }
 
-  .post .content-card:nth-of-type(4n + 3) .card-title:not(.theme-vibe):not(.theme-pes):not(.theme-hp):not(.theme-spandan):not(.theme-vislides) {
+  .post .content-card:nth-of-type(4n + 3) .card-title:not(.theme-vibe):not(.theme-pes):not(.theme-hp):not(.theme-spandan) {
     color: #72b8aa;
   }
 
-  .post .content-card:nth-of-type(4n + 4) .card-title:not(.theme-vibe):not(.theme-pes):not(.theme-hp):not(.theme-spandan):not(.theme-vislides) {
+  .post .content-card:nth-of-type(4n + 4) .card-title:not(.theme-vibe):not(.theme-pes):not(.theme-hp):not(.theme-spandan) {
     color: #d49a72;
   }
 
@@ -98,10 +91,6 @@ layout: default
 
   .post .card-title.theme-spandan {
     color: #7fb3ff;
-  }
-
-  .post .card-title.theme-vislides {
-    color: #ca8a04;
   }
 
   .post .card-meta {
@@ -259,8 +248,6 @@ layout: default
           title.classList.add("theme-hp");
         } else if (normalizedTitle.indexOf("spandan") !== -1) {
           title.classList.add("theme-spandan");
-        } else if (normalizedTitle.indexOf("vi-slides") !== -1 || normalizedTitle.indexOf("vi slides") !== -1 || normalizedTitle.indexOf("vislides") !== -1) {
-          title.classList.add("theme-vislides");
         }
       }
 

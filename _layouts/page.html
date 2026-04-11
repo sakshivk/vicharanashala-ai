@@ -1,20 +1,14 @@
 ---
 layout: default
 ---
-<article class="content-template post">
-  <header class="content-header post-header">
-    <p class="content-meta">{{ page.section | default: page.parent | default: "Vicharanashala" }}{% if page.date %} - {{ page.date | date: "%B %Y" }}{% endif %}</p>
-    <h1 class="content-title post-title">{{ page.page_title | default: page.title | escape }}</h1>
-    {% if page.subtitle %}
-      <p class="content-subtitle">{{ page.subtitle }}</p>
-    {% endif %}
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
   </header>
 
-  {% if page.hero_image %}
-    <img class="content-hero-image" src="{{ page.hero_image }}" alt="{{ page.page_title | default: page.title | escape }}" />
-  {% endif %}
-
-  <div class="post-content markdown-content">
+  <div class="post-content">
     {{ content }}
   </div>
+
 </article>
