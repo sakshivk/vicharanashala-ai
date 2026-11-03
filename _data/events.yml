@@ -167,6 +167,18 @@
   blurb: "Explore ways to recharge, stay focused, and navigate everyday challenges."
   image: "/assets/images/events/v-talk-14.png"
 
+- title: "V-Talk 15 — Write Your Book in 30 Days"
+  date: "2026-11-05"
+  time: "8:00 PM IST"
+  kind: "V-Talk"
+  speaker: "Ms. Sonia Rao — Writer, Editor, TEDx Speaker & Co-founder, NOV51"
+  where: "Online"
+  register_url: "https://zoom.us/meeting/register/xZvK_SzXSByuS95aRYvT1w"
+  register_label: "Meeting Link"
+  questions_url: "https://forms.gle/PS4p3gJwQEhFjApG7"
+  blurb: "Learn how to transform your ideas into a complete manuscript in just 30 days through structured planning, consistent writing, and practical techniques. Discover how to overcome creative blocks and build a sustainable writing habit."
+  image: "/assets/images/events/v-talk-15.png"
+
 - title: "CBPAI Foundation - Cohort 5"
   date: "2026-09-07"
   end: "2026-09-11"
