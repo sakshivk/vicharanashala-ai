@@ -167,6 +167,18 @@
   blurb: "Explore ways to recharge, stay focused, and navigate everyday challenges."
   image: "/assets/images/events/v-talk-14.png"
 
+- title: "V-Talk 15 — Art of Writing and Thinking"
+  date: "2026-11-05"
+  time: "8:00 PM IST"
+  kind: "V-Talk"
+  speaker: "Ms. Sonia Rao — Writer, Editor, TEDx Speaker & Co-founder, NOV51"
+  where: "Online"
+  register_url: "https://zoom.us/meeting/register/1pa7Zt-_QCiRMAEQKnq3zA"
+  register_label: "Meeting Link"
+  questions_url: "https://forms.gle/PS4p3gJwQEhFjApG7"
+  blurb: "Every great idea begins with a thought. Discover the art of turning your ideas into words that inspire, connect, and create impact."
+  image: "/assets/images/events/v-talk-15.png"
+
 - title: "CBPAI Foundation - Cohort 5"
   date: "2026-09-07"
   end: "2026-09-11"
