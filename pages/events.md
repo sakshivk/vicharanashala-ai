@@ -19,6 +19,7 @@ permalink: /events/
 {% assign upcoming = site.data.events | sort: "date" %}
 {% for e in upcoming %}
   <div class="ev-card">
+    {% if e.image %}<a class="ev-card-img" href="{{ e.image | relative_url }}" target="_blank" rel="noopener"><img src="{{ e.image | relative_url }}" alt="{{ e.title }} poster" loading="lazy"></a>{% endif %}
     <div class="ev-card-main">
       {% if e.kind %}<span class="ev-kind">{{ e.kind }}</span>{% endif %}
       <div class="ev-title">{{ e.title }}</div>
@@ -121,7 +122,10 @@ permalink: /events/
       + btn(e) + '</div>';
   }
   function upCard(e) {
-    return '<div class="ev-card" style="border-left-color:' + e._color + '"><div class="ev-card-main">'
+    var img = e.image ? esc((window.VLED_BASEURL || '') + e.image) : '';
+    return '<div class="ev-card" style="border-left-color:' + e._color + '">'
+      + (img ? '<a class="ev-card-img" href="' + img + '" target="_blank" rel="noopener"><img src="' + img + '" alt="' + esc(e.title) + ' poster" loading="lazy"></a>' : '')
+      + '<div class="ev-card-main">'
       + (e.kind ? '<span class="ev-kind">' + esc(e.kind) + '</span>' : '')
       + '<div class="ev-title">' + esc(e.title) + '</div>'
       + (e.speaker ? '<div class="ev-speaker">' + esc(e.speaker) + '</div>' : '')

@@ -3506,7 +3506,10 @@ $fln-accent:    #e48f38;   // brand orange (single accent)
   gap: 1.2rem;
   flex-wrap: wrap;
 }
+.ev-card-img { flex-shrink: 0; width: 320px; max-width: 100%; align-self: flex-start; }
+.ev-card-img img { display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid #e2e2de; }
 .ev-card-main { flex: 1; min-width: 220px; }
+@media (max-width: 600px) { .ev-card-img { width: 100%; max-width: 260px; } }
 .ev-kind {
   display: inline-block;
   font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;

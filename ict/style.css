@@ -36,6 +36,10 @@
   ul { padding-left: 22px; }
   li { margin: 4px 0; }
   .tb { background: var(--soft); border-radius: 6px; padding: 8px 12px; margin: 6px 0; }
+  details.guide { border-left: 3px solid var(--accent); margin: 4px 0 14px; padding: 2px 0 2px 14px; }
+  details.guide summary { cursor: pointer; color: var(--accent); font: 600 15px/1.6 system-ui, sans-serif; }
+  details.guide[open] summary { margin-bottom: 4px; }
+  details.guide p, details.guide li { font-size: 16px; }
   .note { color: var(--muted); font-size: 15px; }
   footer { margin-top: 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
   .ann { border-left: 4px solid var(--accent); padding: 4px 0 4px 14px; margin: 18px 0; }
@@ -51,3 +55,59 @@
   .tabs a { color: var(--text); text-decoration: none; padding-bottom: 2px; border-bottom: 2px solid transparent; }
   .tabs a:hover { color: var(--accent); }
   .tabs a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+
+  /* Case studies: how-it-works graphic (handbook #cases) */
+  .flow { list-style: none; padding: 0; margin: 18px 0 10px; display: grid; gap: 10px;
+          grid-template-columns: repeat(4, 1fr); counter-reset: step; font-family: system-ui, sans-serif; }
+  .flow li { position: relative; margin: 0; background: var(--card); border: 1px solid var(--line);
+             border-top: 4px solid var(--accent); border-radius: 8px; padding: 12px 12px 10px; font-size: 14.5px; line-height: 1.45; }
+  .flow li::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center;
+             width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: var(--bg); font-weight: 700; margin-bottom: 6px; }
+  .flow li:not(:last-child)::after { content: "\2192"; position: absolute; right: -11px; top: 44%; color: var(--accent);
+             font-weight: 700; background: var(--bg); line-height: 1; }
+  .flow b { display: block; font-size: 16px; margin-bottom: 2px; }
+  .flow .when { display: block; margin-top: 8px; color: var(--accent); font-weight: 600; font-size: 13px; }
+  .facts { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 6px; padding: 0; list-style: none; font: 13.5px system-ui, sans-serif; }
+  .facts li { margin: 0; background: var(--soft); border-radius: 999px; padding: 4px 12px; }
+  @media (max-width: 640px) {
+    .flow { grid-template-columns: 1fr; }
+    .flow li:not(:last-child)::after { content: "\2193"; right: auto; left: 50%; top: auto; bottom: -13px; }
+  }
+
+  /* Reading layout (with layout.js): sections as blocks, readings as cards,
+     a menu that stays in view, and a back-to-top button. */
+  main p, main li { max-width: 72ch; }
+  section.block { background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+                  padding: 4px 22px 18px; margin: 22px 0; scroll-margin-top: 64px; }
+  section.block > h2 { border-top: 0; margin: 14px 0 12px; padding: 0 0 8px;
+                       border-bottom: 2px solid var(--soft); }
+  section.block h3 { margin-top: 26px; padding-left: 10px; border-left: 4px solid var(--accent); }
+  section.block > h2 + h3 { margin-top: 14px; }
+  .reading { border: 1px solid var(--line); border-radius: 8px; margin: 12px 0; overflow: hidden; background: var(--bg); }
+  .reading > .tb { max-width: none; margin: 0; border-radius: 0; padding: 10px 14px; }
+  .reading > details.guide, .reading > ul { margin: 0; border-left: 0; padding: 8px 14px 10px; }
+  .reading > ul { padding-left: 32px; }
+  section.block li:has(> details.guide) { list-style: none; margin: 12px 0 12px -22px; max-width: none;
+       border: 1px solid var(--line); border-radius: 8px; background: var(--bg); padding: 10px 14px; }
+  section.block li:has(> details.guide) > details.guide { border-left: 0; padding-left: 0; margin: 8px 0 0; }
+  .subhead { margin-top: 26px; padding-top: 12px; border-top: 1px dashed var(--line); }
+  details.guide summary { display: inline-block; padding: 3px 12px; border: 1px solid var(--accent);
+                          border-radius: 999px; font-size: 14px; list-style: none; }
+  details.guide summary::-webkit-details-marker { display: none; }
+  details.guide summary::before { content: "\25B8  "; }
+  details.guide[open] summary::before { content: "\25BE  "; }
+  details.guide[open] summary { background: var(--soft); margin-bottom: 8px; }
+  details.guide > p:first-of-type strong:only-child { color: var(--accent); }
+  nav.sticky { position: sticky; top: 0; z-index: 5; background: var(--bg); margin: 0 -16px;
+               padding: 10px 16px; border-bottom: 1px solid var(--line); }
+  nav.sticky a.here { font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+  .to-top { position: fixed; right: 18px; bottom: 18px; background: var(--accent); color: var(--bg);
+            font: 600 14px system-ui, sans-serif; text-decoration: none; padding: 8px 14px; border-radius: 999px;
+            opacity: 0; pointer-events: none; transition: opacity .2s; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
+  .to-top.show { opacity: 1; pointer-events: auto; }
+  @media (max-width: 640px) {
+    section.block { padding: 2px 14px 14px; margin: 16px -6px; }
+    nav.sticky { overflow-x: auto; flex-wrap: nowrap; white-space: nowrap; }
+  }
+  .rt { display: block; margin-top: 4px; color: var(--muted); font: 600 13.5px/1.4 system-ui, sans-serif; }
+  .rt::before { content: "\23F1  "; }
